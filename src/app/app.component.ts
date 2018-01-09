@@ -6,12 +6,12 @@ import { PeopleService } from './people/people.service';
   template: `
     <h1>Angular Services</h1>
     <pre>{{ people | json }}</pre>
+    <app-contact-list></app-contact-list>
   `
 })
 export class AppComponent {
   people;
-  constructor() {
-    const peopleService = new PeopleService();
+  constructor(private peopleService: PeopleService) {
     this.people = peopleService.getPeople();
   }
 }
