@@ -4,6 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <h1>Angular Services</h1>
+
+    <app-person-edit></app-person-edit>
   `
 })
 export class AppComponent {
