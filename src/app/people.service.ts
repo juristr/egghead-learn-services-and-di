@@ -4,14 +4,10 @@ import { Injectable } from '@angular/core';
 export class PeopleService {
   name = 'Juri';
 
-  getPerson() {
+  getPerson(): any {
     return {
       name: this.name,
       age: 31
     };
-  }
-
-  setPersonName(value) {
-    this.name = value;
   }
 }

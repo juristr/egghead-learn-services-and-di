@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 
     <h3>App Component</h3>
     <app-person></app-person>
+    <app-woman></app-woman>
   `
 })
 export class AppComponent {}
