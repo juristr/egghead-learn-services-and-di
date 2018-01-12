@@ -5,9 +5,13 @@ import { Component } from '@angular/core';
   template: `
     <h1>Angular Services</h1>
 
+    <h3>App component</h3>
     <app-person-edit></app-person-edit>
+
+    <button (click)="childVisible = !childVisible">Toggle</button>
+    <app-child *ngIf="childVisible"></app-child>
   `
 })
 export class AppComponent {
-  title = 'app';
+  childVisible = true;
 }
