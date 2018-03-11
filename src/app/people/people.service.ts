@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 
-export abstract class PeopleService {
-  abstract getPeople();
-}
-
 @Injectable()
-export class AwesomePeopleService {
+export class PeopleService {
   people = [
     {
       name: 'Juri'
@@ -17,5 +13,11 @@ export class AwesomePeopleService {
 
   getPeople() {
     return this.people;
+  }
+
+  addPerson(name) {
+    this.people.push({
+      name
+    });
   }
 }

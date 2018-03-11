@@ -4,12 +4,15 @@ import { PeopleService } from './people.service';
 @Component({
   selector: 'app-people-list',
   template: `
-    <h3>List of people</h3>
     <ul>
       <li *ngFor="let person of people">
         {{ person.name }}
       </li>
     </ul>
+    <div>
+      <input type="text" #personName>
+      <button (click)="onAddPerson(personName)">Add</button>
+    </div>
   `
 })
 export class PeopleListComponent implements OnInit {
@@ -19,5 +22,10 @@ export class PeopleListComponent implements OnInit {
 
   ngOnInit() {
     this.people = this.peopleService.getPeople();
+  }
+
+  onAddPerson(personTextBox) {
+    this.peopleService.addPerson(personTextBox.value);
+    personTextBox.value = '';
   }
 }
