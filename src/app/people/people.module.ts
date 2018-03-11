@@ -6,7 +6,13 @@ import { PeopleListComponent } from './people-list.component';
 @NgModule({
   imports: [CommonModule],
   declarations: [PeopleListComponent],
-  providers: [PeopleService],
   exports: [PeopleListComponent]
 })
-export class PeopleModule {}
+export class PeopleModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: PeopleModule,
+      providers: [PeopleService]
+    };
+  }
+}

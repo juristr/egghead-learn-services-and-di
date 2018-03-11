@@ -11,6 +11,10 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'employees',
+    loadChildren: './employees/employees.module#EmployeesModule'
   }
 ];
 
